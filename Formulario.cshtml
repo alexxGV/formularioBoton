@@ -1,0 +1,60 @@
+﻿@section scripts{
+    <script>
+        $(document).ready(function () {
+            //CLIENTE
+            $('#nuevoComentario').click(function () {
+                $('#formComentario').removeAttr('hidden');
+            })
+
+            $('#close').click(function () {
+                $('#formComentario').attr('hidden', true);
+            });
+        })
+    </script>
+}
+
+<link rel="stylesheet" href="~/css/estrellas.css" />
+
+<div class="container text-center">
+
+
+    <partial name="_PatialBotonMostarFormulario" />
+
+
+    <form method="post" hidden id="formComentario">
+        <button type="button" class="close" aria-label="Close" id="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <br />
+
+        <label>Nombre:</label>
+        <input type="text" name="nombre" class="form-control" />
+
+        <label>Apellido:</label>
+        <input type="text" name="apellido" class="form-control" />
+
+        <label>Descripcion:</label>
+        <textarea class="form-control" rows="3" name="descripcion"></textarea><br />
+
+        <label>Valoracion de la explicacion:</label>
+        <p class="clasificacion">
+            <input id="radio1" type="radio" name="valoracion" value="5">
+            <label for="radio1">★</label>
+
+            <input id="radio2" type="radio" name="valoracion" value="4">
+            <label for="radio2">★</label>
+
+            <input id="radio3" type="radio" name="valoracion" value="3">
+            <label for="radio3">★</label>
+
+            <input id="radio4" type="radio" name="valoracion" value="2">
+            <label for="radio4">★</label>
+
+            <input id="radio5" type="radio" name="valoracion" value="1">
+            <label for="radio5">★</label>
+        </p>
+
+        <button type="submit" class="btn btn-success">Enviar perfil</button>
+
+    </form>
+</div>
